@@ -51,6 +51,17 @@ Construir una aplicación/servicio en SpringBoot que provea una end point rest d
         "applicationDate": "2020-06-15T00:50:00",
         "finalPrice": 30.5
     }
+
+## Diagrama Entidad relacion:
+De acuerdo al enunciado se construyó un modelo entidad relacion para el almacentamiento de los datos en la basde de datos H2:
+
+[![Diagrama de ER](https://github.com/Andresdavid2310/Api-Price-Calculator-for-Eco/blob/98b8fadafcc880d7e8666ffb13a81c61fc61b215/img/db.png)](https://github.com/Andresdavid2310/Api-Price-Calculator-for-Eco/blob/98b8fadafcc880d7e8666ffb13a81c61fc61b215/img/db.png)
+
+## Diagrama De Secuencia:
+De acuerdo al enunciado se construyó un diagrama de secuencia para entender el flujo de la aplicación:
+
+[![Diagrama de secuencia](https://github.com/Andresdavid2310/Api-Price-Calculator-for-Eco/blob/98b8fadafcc880d7e8666ffb13a81c61fc61b215/img/Diagrama.png)](https://github.com/Andresdavid2310/Api-Price-Calculator-for-Eco/blob/98b8fadafcc880d7e8666ffb13a81c61fc61b215/img/Diagrama.png)
+
 ## Requisitos previos
 
 - Debes tener instalado Java
@@ -114,9 +125,7 @@ Una vez tengas ejecutando el proyecto en tu local puedes ver la documentación y
 
     Si necesita modificar o agregar algun dato se puede hacer actualizando el archivo: src/main/resources/data.sql
 
-4.Puedes Empezar a probar el endpoint de calculo de precios,  por acá la colección de postman con la información para probar en local y produccion :
-
-    https://api.postman.com/collections/11985200-30040781-5644-47c1-a518-f4cd5b87094e?access_key=PMAT-01HCW3EBRMW978YRWKAJ59KCSJ
+4.Puedes Empezar a probar el endpoint de calculo de precios,  por acá la colección de postman con la información para probar en local y produccion [(aqui)](https://api.postman.com/collections/11985200-30040781-5644-47c1-a518-f4cd5b87094e?access_key=PMAT-01HCW3EBRMW978YRWKAJ59KCSJ):
 
 ## Contacto
 
