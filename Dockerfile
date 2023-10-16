@@ -1,23 +1,26 @@
-# Usar una imagen base con JDK 11 y Maven
-FROM maven:3.8.4-openjdk-11 AS build
+# Etapa 1: Compila el proyecto Maven
+FROM maven:3.8.4-openjdk-17 AS build
 
-# Establecer un directorio de trabajo
+# Establece el directorio de trabajo
 WORKDIR /app
 
-# Copiar archivos de tu proyecto al directorio de trabajo
+# Copia los archivos de tu proyecto al directorio de trabajo
 COPY . /app
 
-# Ejecutar Maven para construir el proyecto
+# Ejecuta Maven para compilar el proyecto
 RUN mvn clean package
 
-# Crear una nueva imagen basada en OpenJDK 11
-FROM openjdk:11-jre-slim-buster
+# Etapa 2: Ejecuta la aplicación en una imagen base separada
+FROM amazoncorretto:17.0.7-alpine
 
-# Exponer el puerto que utilizará la aplicación
-EXPOSE 8080
+# Exponer el puerto que utilizará la aplicación (si es necesario)
+# EXPOSE 8080
 
-# Copiar el archivo JAR construido desde la etapa anterior
+# Establece el directorio de trabajo (opcional)
+WORKDIR /app
+
+# Copia el archivo JAR construido desde la etapa de compilación
 COPY --from=build /app/target/pricesCalculator-0.0.1-SNAPSHOT.jar /app/pricesCalculator-0.0.1-SNAPSHOT.jar
 
-# Establecer el punto de entrada para ejecutar la aplicación
-ENTRYPOINT ["java", "-jar", "/app/pricesCalculator-0.0.1-SNAPSHOT.jar"]
+# Establece el punto de entrada para ejecutar la aplicación
+CMD ["java", "-jar", "pricesCalculator-0.0.1-SNAPSHOT.jar"]

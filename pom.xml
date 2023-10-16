@@ -11,7 +11,6 @@
 	<groupId>com.api</groupId>
 	<artifactId>pricesCalculator</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
 	<name>pricesCalculator</name>
 	<description>This repository was created to save the code of an API that must calculate the value of the prices of an ecommerce</description>
 	<properties>
