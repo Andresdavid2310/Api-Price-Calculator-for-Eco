@@ -1,0 +1,12 @@
+@startuml
+actor User
+User -> PriceController: Hacer solicitud de precio
+PriceController -> PriceUseCaseImpl: Llamar a getPrice(priceRequest)
+PriceUseCaseImpl -> PriceRepository: Realizar consulta en la base de datos
+PriceRepository --> PriceUseCaseImpl: Devolver lista de precios
+PriceUseCaseImpl -> PriceUseCaseImpl: Procesar la lista de precios
+PriceUseCaseImpl -> PriceResponse: Crear objeto PriceResponse
+PriceResponse --> PriceController: Devolver PriceResponse
+PriceController --> User: Devolver PriceResponse
+User -> PriceController: Recibir PriceResponse
+@enduml

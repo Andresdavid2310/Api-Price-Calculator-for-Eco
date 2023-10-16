@@ -1,0 +1,32 @@
+@startuml
+class Brand {
+    + id: Long
+    + name: String
+}
+
+class Price {
+    + id: Long
+    + brand: Brand
+    + product: Product
+    + priceDetails: PriceDetail
+}
+
+class PriceDetail {
+    + priceId: Long
+    + startDate: LocalDateTime
+    + endDate: LocalDateTime
+    + priority: Integer
+    + price: Double
+    + curr: String
+}
+
+class Product {
+    + id: Long
+    + name: String
+}
+
+Brand --|{ Price
+Price --|{ PriceDetail
+Price --|{ Brand
+Price --|{ Product
+@enduml
